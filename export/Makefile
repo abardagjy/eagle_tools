@@ -1,13 +1,31 @@
 #
 # Makefile for generating gerbers and pngs.
 # Tested on Advanced Circuits barebones, should work for 33 each, 
-# gerbmerge. Pngs used for the fab modules and the modella. 
+# gerbmerge, and Advanced Circuits. Pngs used for the fab modules 
+# and the modella. 
+#
+# Copyright (C) 2011 Andy Bardagjy. 
+#
+# This makefile is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+# 
+# This makefile is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+# 
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
 # Andy Bardagjy
 # June 21, 2011
 #
 
 PROJECT?= 2ledboard
+
 WHITE?= \#FFFFFF
 BLACK?= \#000000
 
