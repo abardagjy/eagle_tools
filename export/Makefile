@@ -126,4 +126,5 @@ parts: $(PROJECT).sch
 
 clean:
 	rm -rf $(PROJECT).{csv,txt,bor,cmp,drd,dri,gpi,sol,zip,png,path,sts,stc,pls,plc}
+	rm -rf *#*
 	rm -rf gerbers fab parts
