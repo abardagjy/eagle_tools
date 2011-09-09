@@ -112,7 +112,7 @@ gerbers: $(PROJECT).cmp $(PROJECT).sol $(PROJECT).stc $(PROJECT).sts $(PROJECT).
 
 fab: $(PROJECT)_cmp.png $(PROJECT)_sol.png $(PROJECT)_drd.png 
 	mkdir -p fab
-	mv $(PROJECT){_cmp.png,_drd.png} fab/
+	mv $(PROJECT){_cmp.png,_sol.png,_drd.png} fab/
 
 view: gerbers
 	#gerbv gerbers/$(PROJECT).{bor,drd,stc,plc,cmp,sts,pls,sol} &
