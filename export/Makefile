@@ -61,8 +61,8 @@ $(PROJECT).pls: $(PROJECT).brd
 
 # Drills Xcellon
 $(PROJECT).drd: $(PROJECT).brd
-    # FIXME This is the drd hack (see top of file)
-    touch $(PROJECT).drd
+	# FIXME This is the drd hack (see top of file)
+	touch $(PROJECT).drd
 	eagle -X -dEXCELLON -o$(PROJECT).drd $(PROJECT).brd Drills Holes
 
 # Board Outline Gerber
