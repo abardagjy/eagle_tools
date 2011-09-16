@@ -23,11 +23,17 @@
 # Andy Bardagjy
 # June 21, 2011
 #
+# TODO
+# Interesting bug, if there are no holes on the board, the script fails
+# because no drd file is generated, so... I touch an empty drd file 
+# so the build doesn't fail. This is kinda a kluge...
 
 PROJECT?= 2ledboard
 
 WHITE?= \#FFFFFF
 BLACK?= \#000000
+
+HOLES?= yes
 
 all: gerbers fab parts
 
@@ -57,6 +63,8 @@ $(PROJECT).pls: $(PROJECT).brd
 
 # Drills Xcellon
 $(PROJECT).drd: $(PROJECT).brd
+    # FIXME This is the drd hack (see top of file)
+    touch $(PROJECT).drd
 	eagle -X -dEXCELLON -o$(PROJECT).drd $(PROJECT).brd Drills Holes
 
 # Board Outline Gerber
