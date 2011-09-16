@@ -33,8 +33,6 @@ PROJECT?= 2ledboard
 WHITE?= \#FFFFFF
 BLACK?= \#000000
 
-HOLES?= yes
-
 all: gerbers fab parts
 
 # Component Side Gerber
