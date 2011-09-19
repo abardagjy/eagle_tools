@@ -62,6 +62,7 @@ $(PROJECT).pls: $(PROJECT).brd
 # Drills Xcellon
 $(PROJECT).drd: $(PROJECT).brd
 	# FIXME This is the drd hack (see top of file)
+	rm -f $(PROJECT).drd
 	touch $(PROJECT).drd
 	eagle -X -dEXCELLON -o$(PROJECT).drd $(PROJECT).brd Drills Holes
 
