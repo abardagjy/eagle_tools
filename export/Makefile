@@ -117,9 +117,11 @@ gerbers: $(PROJECT).cmp $(PROJECT).sol $(PROJECT).stc $(PROJECT).sts $(PROJECT).
 	zip gerbers/$(PROJECT)_advanced.zip gerbers/*.{bor,drd,cmp,sol,stc,sts,plc,pls}
 	zip gerbers/$(PROJECT)_barebones.zip gerbers/*.{bor,drd,cmp,sol}
 
-fab: $(PROJECT)_cmp.png $(PROJECT)_sol.png $(PROJECT)_drd.png 
+fab: $(PROJECT)_cmp.png $(PROJECT)_drd.png
+# fab: $(PROJECT)_cmp.png $(PROJECT)_drd.png $(PROJECT)_sol.png
 	mkdir -p fab
-	mv $(PROJECT){_cmp.png,_sol.png,_drd.png} fab/
+	# mv $(PROJECT){_cmp.png,_sol.png,_drd.png} fab/
+	mv $(PROJECT){_cmp.png,_drd.png} fab/
 
 view: gerbers
 	#gerbv gerbers/$(PROJECT).{bor,drd,stc,plc,cmp,sts,pls,sol} &
