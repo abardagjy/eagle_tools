@@ -27,6 +27,11 @@
 # Interesting bug, if there are no holes on the board, the script fails
 # because no drd file is generated, so... I touch an empty drd file 
 # so the build doesn't fail. This is kinda a kluge...
+# 
+# If there's no dimension layer, the build fails...
+# 
+# I should add document export: sch, brd
+#
 
 PROJECT?= 2ledboard
 
@@ -117,10 +122,10 @@ gerbers: $(PROJECT).cmp $(PROJECT).sol $(PROJECT).stc $(PROJECT).sts $(PROJECT).
 	zip gerbers/$(PROJECT)_advanced.zip gerbers/*.{bor,drd,cmp,sol,stc,sts,plc,pls}
 	zip gerbers/$(PROJECT)_barebones.zip gerbers/*.{bor,drd,cmp,sol}
 
+# fab: $(PROJECT)_cmp.png $(PROJECT)_drd.png $(PROJECT)_sol.png
 fab: $(PROJECT)_cmp.png $(PROJECT)_drd.png
-fab: $(PROJECT)_cmp.png $(PROJECT)_drd.png $(PROJECT)_sol.png
 	mkdir -p fab
-	mv $(PROJECT){_cmp.png,_sol.png,_drd.png} fab/
+	# mv $(PROJECT){_cmp.png,_sol.png,_drd.png} fab/
 	mv $(PROJECT){_cmp.png,_drd.png} fab/
 
 view: gerbers
