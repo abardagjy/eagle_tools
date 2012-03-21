@@ -139,7 +139,7 @@ parts: $(PROJECT).sch
 	mv $(PROJECT).{csv,txt} parts
 
 $(PROJECT)_sch.png: $(PROJECT).sch
-	eagle -C "export image $(PROJECT)_sch.png 600; quit;" $(PROJECT).sch
+	eagle -C "export image $(PROJECT)_sch.png 300; quit;" $(PROJECT).sch
 	convert $(PROJECT)_sch.png -mattecolor white -frame 25x25 $(PROJECT)_sch.png
 
 $(PROJECT)_tbrd.png: $(PROJECT).brd
