@@ -86,9 +86,7 @@ $(PROJECT)_cmp.png: gerbers
 	convert $(PROJECT)_cmp.png -colorspace gray +dither -colors 2 -normalize $(PROJECT)_cmp.png
 	convert $(PROJECT)_cmp.png -mattecolor white -frame 25x25 $(PROJECT)_cmp.png
 	convert $(PROJECT)_cmp.png -strip $(PROJECT)_cmp.png
-	convert $(PROJECT)_cmp.png -units PixelsPerInch -density 600 $(PROJECT)_cmp.png
-	convert $(PROJECT)_cmp.png -colorspace RGB $(PROJECT)_cmp.png
-	convert $(PROJECT)_cmp.png -type TrueColormatte PNG32:$(PROJECT)_cmp.png
+	convert $(PROJECT)_cmp.png -units PixelsPerInch -density 600 -colorspace sRGB -type TrueColor PNG32:$(PROJECT)_cmp.png
 
 # Bottom Copper PNG
 # So you *can* do this with eagle commands, but the holes don't work out right.
@@ -98,9 +96,7 @@ $(PROJECT)_sol.png: gerbers
 	convert $(PROJECT)_sol.png -colorspace gray +dither -colors 2 -normalize $(PROJECT)_sol.png
 	convert $(PROJECT)_sol.png -mattecolor white -frame 25x25 $(PROJECT)_sol.png
 	convert $(PROJECT)_sol.png -strip $(PROJECT)_sol.png
-	convert $(PROJECT)_sol.png -units PixelsPerInch -density 600 $(PROJECT)_sol.png
-	convert $(PROJECT)_sol.png -colorspace RGB $(PROJECT)_sol.png
-	convert $(PROJECT)_sol.png -type TrueColormatte PNG32:$(PROJECT)_sol.png
+	convert $(PROJECT)_sol.png -units PixelsPerInch -density 600 -colorspace sRGB -type TrueColor PNG32:$(PROJECT)_sol.png
 
 # Drills PNG
 # So you *can* do this with eagle commands, but the holes don't work out right.
@@ -112,9 +108,7 @@ $(PROJECT)_drd.png: gerbers
 	convert $(PROJECT)_drd.png -colorspace gray +dither -colors 2 -normalize $(PROJECT)_drd.png
 	convert $(PROJECT)_drd.png -mattecolor black -frame 25x25 $(PROJECT)_drd.png
 	convert $(PROJECT)_drd.png -strip $(PROJECT)_drd.png
-	convert $(PROJECT)_drd.png -units PixelsPerInch -density 600 $(PROJECT)_drd.png
-	convert $(PROJECT)_drd.png -colorspace RGB $(PROJECT)_drd.png
-	convert $(PROJECT)_drd.png -type TrueColormatte PNG32:$(PROJECT)_drd.png
+	convert $(PROJECT)_drd.png -units PixelsPerInch -density 600 -colorspace sRGB -type TrueColor PNG32:$(PROJECT)_drd.png
 
 gerbers: $(PROJECT).cmp $(PROJECT).sol $(PROJECT).stc $(PROJECT).sts $(PROJECT).plc $(PROJECT).pls $(PROJECT).drd $(PROJECT).bor
 	mkdir -p gerbers
